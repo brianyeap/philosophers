@@ -12,7 +12,6 @@
 
 #include "philo.h"
 
-
 // Check Error helper funcs
 static void	mutex_check_error(int status, t_opcode opcode)
 {

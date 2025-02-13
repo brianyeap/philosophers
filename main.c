@@ -12,7 +12,7 @@
 
 #include "philo.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_data	data;
 
@@ -25,6 +25,8 @@ int main(int argc, char **argv)
 	}
 	else
 		error_exit("Input Error!\n"
-		YELLOW " Usage: ./philo number_of_philosophers time_to_die time_to_eat time_to_sleep [number_of_times_each_philosopher_must_eat]"RESET);
+			YELLOW "Usage: ./philo number_of_philosophers time_to_die"
+			"time_to_eat time_to_sleep"
+			"[number_of_times_each_philosopher_must_eat]"RESET);
 	return (0);
 }

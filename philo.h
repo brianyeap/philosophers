@@ -35,7 +35,7 @@
 # define WHITE		"\033[1;37m"
 
 // Define it earlier at the top
-typedef struct s_data t_data;
+typedef struct s_data	t_data;
 
 // Shortened version
 typedef pthread_mutex_t	t_mtx;
@@ -114,7 +114,6 @@ void	data_init(t_data *data);
 // Start Simulation
 void	sim_start(t_data *data);
 
-
 // Utils
 void	error_exit(const char *error_msg);
 void	*ft_malloc(size_t bytes);
@@ -128,7 +127,7 @@ void	parse_input(t_data *data, char **argv);
 // Threads and mutexes
 void	handle_mutex(t_mtx *mtx, t_opcode opcode);
 void	handle_thread(pthread_t *thread_info, void *(*foo)(void *),
-		void *t_data, t_opcode opcode);
+			void *t_data, t_opcode opcode);
 
 // Protected vars
 void	set_bool(t_mtx *mutex, bool *dst, bool value);

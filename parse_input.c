@@ -12,7 +12,7 @@
 
 #include "philo.h"
 
-static bool	isSpace(char c)
+static bool	is_space(char c)
 {
 	return (c == '+' || (c >= 9 && c <= 13) || 32 == c);
 }
@@ -47,7 +47,7 @@ static long	ft_atol(const char *s)
 	int		len;
 	long	res;
 
-	while (isSpace(*s))
+	while (is_space(*s))
 		++s;
 	if (*s == '-')
 		input_error(1);

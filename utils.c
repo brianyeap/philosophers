@@ -52,7 +52,6 @@ long	get_time(t_time_unit time_unit)
 		return (1);
 	}
 	return (-1);
-
 }
 
 void	ft_usleep(long sleep_time, t_data *data)

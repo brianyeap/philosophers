@@ -58,8 +58,8 @@ void	*death_affirm(void *ph_data)
 	t_data	*data;
 
 	data = (t_data *)ph_data;
-	while (!is_all_philos_active(&data->access_mutex, &data->active_philos_count,
-			data->ph_total))
+	while (!is_all_philos_active(&data->access_mutex,
+			&data->active_philos_count, data->ph_total))
 		;
 	while (!get_bool(&data->access_mutex, &data->end_time))
 	{

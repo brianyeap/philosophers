@@ -30,12 +30,12 @@ static void	thinking(t_ph *philo, bool pre_simulation)
 	ft_usleep(thinking_time * 0.3, philo->data);
 }
 
-static void synchronize_dining(t_ph *philo)
+static void	synchronize_dining(t_ph *philo)
 {
 	long	eating_time;
 	long	sleeping_time;
 	long	thinking_time;
-	
+
 	if (philo->ph_id % 2 == 0)
 		ft_usleep(30000, philo->data);
 	else
@@ -48,7 +48,7 @@ static void synchronize_dining(t_ph *philo)
 	ft_usleep(thinking_time * 0.3, philo->data);
 }
 
-static void eating(t_ph *philo)
+static void	eating(t_ph *philo)
 {
 	handle_mutex(&philo->left_fork->fork_mutex, LOCK);
 	ph_status(TAKES_LEFTFORK, philo);
@@ -77,7 +77,7 @@ static void	*dining_philos(void *ph_data)
 	while (!get_bool(&philo->data->access_mutex, &philo->data->end_time))
 	{
 		if (get_bool(&philo->ph_mutex, &philo->max_meals))
-			break;
+			break ;
 		eating(philo);
 		ph_status(SLEEPING, philo);
 		ft_usleep(philo->data->time_to_sleep, philo->data);
@@ -85,7 +85,6 @@ static void	*dining_philos(void *ph_data)
 	}
 	return (NULL);
 }
-
 
 void	sim_start(t_data *data)
 {
